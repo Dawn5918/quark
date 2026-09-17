@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夸克网盘分享</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system}
+        body{background:#f5f7fa;padding:40px 20px;}
+        .box{background:#fff;border-radius:20px;padding:36px 24px;max-width:480px;margin:0 auto;text-align:center;box-shadow:0 2px 12px #00000010;}
+        .q-icon{width:80px;height:80px;background:#2563eb;border-radius:50px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;font-weight:bold;}
+        h1{font-size:22px;color:#222;margin-bottom:12px;}
+        .share-id{color:#666;margin-bottom:30px;font-size:15px;}
+        .btn-blue{width:100%;padding:16px;background:#2563eb;color:#fff;border:none;border-radius:14px;font-size:18px;font-weight:500;margin-bottom:16px;cursor:pointer;}
+        .btn-gray{width:100%;padding:16px;background:#f0f4ff;color:#2563eb;border:none;border-radius:14px;font-size:18px;font-weight:500;margin-bottom:24px;cursor:pointer;}
+        .tip{color:#777;font-size:14px;text-align:left;line-height:1.6;margin-bottom:24px;}
+        .link-area{background:#f3f4f6;padding:14px;border-radius:12px;text-align:left;display:flex;gap:10px;}
+        .link-text{flex:1;color:#333;word-break:break-all;font-size:14px;}
+        .copy-btn{padding:8px 12px;background:#2563eb;color:#fff;border-radius:8px;border:0;white-space:nowrap;cursor:pointer;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="q-icon">Q</div>
+        <h1>夸克网盘分享</h1>
+        <div class="share-id">分享ID: 20195004c660</div>
+        <!-- 点击唤起夸克APP -->
+        <button class="btn-blue" onclick="window.location.href='quark://openurl?url=https://pan.quark.cn/s/这里替换成你的夸克分享链接'">打开夸克 App</button>
+        <button class="btn-gray" id="copyLinkBtn">复制夸克链接</button>
+        <div class="tip">打开App没反应？也可以复制夸克链接，再用Safari、Chrome或夸克浏览器打开。</div>
+        <div class="link-area">
+            <div class="link-text" id="realLink">https://pan.quark.cn/s/606a318e0e20</div>
+            <button class="copy-btn" onclick="copyText()">复制</button>
+        </div>
+    </div>
+
+<script>
+const linkStr = "https://pan.quark.cn/s/606a318e0e20";
+document.getElementById("copyLinkBtn").onclick = copyText;
+function copyText(){
+    navigator.clipboard.writeText(linkStr).then(()=>{
+        alert("链接已复制");
+    })
+}
+</script>
+</body>
+</html>
